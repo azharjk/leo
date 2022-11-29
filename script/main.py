@@ -1,5 +1,7 @@
 import sys
 from core.fetcher import Fetcher
+from core.web_scraper import WebScraper
+from core.memory_storage import MemoryStorage
 
 
 def main() -> None:
@@ -9,7 +11,10 @@ def main() -> None:
 
     url = sys.argv[1]
     r = Fetcher.Get(url)
-    print(r.data)
+
+    scraper = WebScraper(r, MemoryStorage())
+
+    print(scraper.get_headings())
 
 
 if __name__ == "__main__":
