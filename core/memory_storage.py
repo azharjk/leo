@@ -10,5 +10,5 @@ class MemoryStorage(object):
     def append_heading(self, s: str) -> None:
         self.headings.append(s)
 
-    def get_heading(self) -> List[str]:
+    def get_headings(self) -> List[str]:
         return self.headings
